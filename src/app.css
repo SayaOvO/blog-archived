@@ -39,6 +39,7 @@ body,
 	padding: 8px 16px;
 	border-radius: 10px;
 	tab-size: 2;
+	overflow: auto;
 }
 
 .prose ul {

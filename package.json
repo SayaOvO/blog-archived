@@ -1,0 +1,38 @@
+{
+	"name": "blog",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"prepare": "panda codegen",
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ./src"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.20.4",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-svelte": "^2.30.0",
+		"mdsvex": "^0.11.0",
+		"pandacss-preset-typography": "^0.0.10",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.10.1",
+		"remark-codesandbox": "^0.10.1",
+		"svelte": "^4.0.5",
+		"svelte-check": "^3.4.3",
+		"typescript": "^5.0.0",
+		"vite": "^4.4.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"@pandacss/dev": "^0.7.0",
+		"lucide-svelte": "^0.263.0",
+		"remark-gfm": "^3.0.1",
+		"shiki": "^0.14.3"
+	}
+}

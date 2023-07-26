@@ -1,0 +1,70 @@
+@layer reset, base, tokens, recipes, utilities;
+
+html,
+body,
+:root {
+	text-rendering: optimizeSpeed;
+}
+.prose p {
+	font-size: 1.125rem;
+	line-height: 1.7777778;
+	margin-block: 4px 12px;
+}
+
+.prose h2 {
+	font-weight: 500;
+	font-size: 1.5rem;
+	margin-block: 40px 12px;
+	line-height: 40px;
+}
+
+.prose h3 {
+	font-size: 1.1rem;
+	font-weight: 500;
+	line-height: 38px;
+	margin-block: 24px 4px;
+	color: #9a3412;
+}
+
+.prose time {
+	font-style: italic;
+}
+
+.prose ul {
+	margin-block: 24px 24px;
+	padding-left: 28px;
+}
+
+.prose pre {
+	padding: 8px 16px;
+	border-radius: 10px;
+	tab-size: 2;
+}
+
+.prose ul {
+	list-style-type: circle;
+}
+.prose li::marker {
+	color: gray;
+	font-size: 1.1em;
+}
+
+.prose blockquote {
+	padding-left: 16px;
+	border-left: 2px solid #94a3b8;
+}
+
+.prose blockquote * {
+	color: #4b5563;
+}
+
+.prose a {
+	border-bottom: 1px solid #999;
+	color: #374151;
+	transition: color;
+}
+
+.prose a:hover {
+	color: black;
+	border-bottom: 1px solid black;
+}

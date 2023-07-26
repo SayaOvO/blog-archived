@@ -61,10 +61,7 @@
 					})}
 				>
 					<FolderClosed size={20} />
-					<span
-						class={css({
-							mr: 3
-						})}>分类</span
+					<span>分类：</span
 					>
 					{#each categories as category}
 						<span
@@ -91,10 +88,7 @@
 					})}
 				>
 					<Tag size={20} />
-					<span
-						class={css({
-							mr: 3
-						})}>标签:</span
+					<span>标签：</span
 					>
 					{#each tags as tag}
 						<span

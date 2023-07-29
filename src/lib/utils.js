@@ -7,7 +7,7 @@ export function formatDate(date) {
 	return formatter.format(new Date(date));
 }
 
-/**  @param {import("../app").Post[]} posts 2 */
+/**  @param {import("$lib/types").Post[]} posts 2 */
 export function getTags(posts) {
 	/**  @type string[] */
 	let allTags = [];
@@ -22,7 +22,7 @@ export function getTags(posts) {
 	return allTags;
 }
 
-/**  @param {import("../app").Post[]} posts 2 */
+/**  @param {import("$lib/types").Post[]} posts 2 */
 export function getCategories(posts) {
 	/**  @type string[] */
 	let allCategories = [];
@@ -53,4 +53,42 @@ export function getRandomColor() {
 	const colorIndex = Math.floor(Math.random() * colors.length);
 
 	return colors[colorIndex];
+}
+
+/** @param {string=} category
+ * @param {string=} tag
+ */
+export async function getPosts(tag, category) {
+	/** @type import("$lib/types").Post[] */
+	let posts = [];
+
+	const paths = import.meta.glob('/src/posts/*.md', { eager: true });
+
+	for (const path in paths) {
+		const file = paths[path];
+		const slug = path.split('/').at(-1)?.replace('.md', '');
+
+		if (file && typeof file === 'object' && 'metadata' in file && slug) {
+			/** @type {import("$lib/types").Metadata} */
+			// @ts-ignore
+			const metadata = file.metadata;
+
+			/** @type {import("$lib/types").Post} */
+			const post = { ...metadata, slug };
+
+			post.published && posts.push(post);
+		}
+
+		if (tag) {
+			posts = posts.filter((post) => post.tags.includes(tag));
+		}
+
+		if (category) {
+			posts = posts.filter((post) => post.categories.includes(category));
+		}
+
+		// sort posts by date
+		posts.sort((p1, p2) => new Date(p2.date).getTime() - new Date(p1.date).getTime());
+		return posts;
+	}
 }

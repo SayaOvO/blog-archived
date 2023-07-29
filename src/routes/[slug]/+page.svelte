@@ -10,7 +10,6 @@
 	let tags = data.meta.tags ?? [];
 	let categories = data.meta.categories ?? [];
 
-	console.log(data.meta, 'meta');
 </script>
 
 <svelte:head>
@@ -18,7 +17,7 @@
 	<meta name="og:type" content="article" />
 	<meta name="og:title" content={data.meta.title} />
 	<meta name="og:description" content={data.meta.description} />
-	<!-- <meta name="og:url" content={`https://saya.missgao.cc/${data.slug}`} /> -->
+	<meta name="og:url" content={`https://sayya.vercel.app/${data.slug}`} />
 </svelte:head>
 
 <main
@@ -61,8 +60,7 @@
 					})}
 				>
 					<FolderClosed size={20} />
-					<span>分类：</span
-					>
+					<span>分类：</span>
 					{#each categories as category}
 						<span
 							class={css({
@@ -88,8 +86,7 @@
 					})}
 				>
 					<Tag size={20} />
-					<span>标签：</span
-					>
+					<span>标签：</span>
 					{#each tags as tag}
 						<span
 							class={css({

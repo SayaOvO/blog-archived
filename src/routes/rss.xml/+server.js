@@ -1,13 +1,12 @@
+import { getPosts } from "$lib/utils";
+
 export const prerender = true;
 
 /**  @type {import("@sveltejs/kit").Handle} */
-/** @param {import("@sveltejs/kit").RequestEvent} param0 1
- */
-export async function GET({ fetch }) {
-	const response = await fetch('api/posts');
+export async function GET() {
 
 	/**  @type {import("$lib/types").Post[]} */
-	const posts = await response.json();
+	const posts = await getPosts() || [];
 
 	const headers = { 'Content-Type': 'application/xml' };
 
@@ -16,16 +15,16 @@ export async function GET({ fetch }) {
 			<channel>
 				<title>Saya's Blog</title>
 				<description>Saya 的个人博客</description>
-				<link>https://saya.missgao.cc</link>
-				<atom:link href="https://saya.missgao.cc/rss.xml" rel="self" type="application/rss+xml"/>
+				<link>https://sayya.vercel.app</link>
+				<atom:link href="rss.xml" rel="self" type="application/rss+xml"/>
 				${posts
 					.map(
 						(post) => `
 						<item>
 							<title>${post.title}</title>
 							<description>${post.description}</description>
-							<link>https://saya.missgao.cc/${post.slug}</link>
-							<guid isPermaLink="true">https://saya.missgao.cc/${post.slug}</guid>
+							<link>https://sayya.vercel.app/${post.slug}</link>
+							<guid isPermaLink="true">https://sayya.vercel.app/${post.slug}</guid>
 							<pubDate>${new Date(post.date).toLocaleDateString()}</pubDate>
 						</item>
 					`

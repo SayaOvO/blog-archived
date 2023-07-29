@@ -7,7 +7,6 @@
 	/** @type {{pathname:string}}*/
 	export let data;
 
-	console.log(data.pathname, 'pathname');
 </script>
 
 <div>

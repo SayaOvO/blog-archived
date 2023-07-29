@@ -5,4 +5,7 @@ export type Post = {
 	tags: string[];
 	slug: string;
 	date: string;
+	published: boolean;
 };
+
+export type Metadata = Omit<Post, 'slug'>;

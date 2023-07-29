@@ -1,10 +1,9 @@
-/**  @type { import("@sveltejs/kit").Load } */
-export async function load({ fetch }) {
-	const response = await fetch('/api/posts');
-	const posts = await response.json();
+import { getPosts } from '$lib/utils';
 
+/**  @type { import("@sveltejs/kit").Load } */
+export async function load() {
+	const posts = (await getPosts()) ?? [];
 	return {
-		/**  @type { import("$lib/types").Post[] } */
 		posts
 	};
 }

@@ -27,11 +27,13 @@
 		},
 		{
 			name: 'Email',
-			icon: Mail
+			icon: Mail,
+			href: 'mailto:sayyaovo+blog@proton.me'
 		},
 		{
 			name: 'Twitter',
-			icon: Twitter
+			icon: Twitter,
+			href: "www.twitter.com/#"
 		}
 	];
 </script>

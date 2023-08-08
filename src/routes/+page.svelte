@@ -71,7 +71,7 @@
 				mt: 4
 			})}
 		>
-			<h3
+			<h2
 				class={css({
 					fontSize: 'xl',
 					fontWeight: 'semibold',
@@ -79,7 +79,7 @@
 				})}
 			>
 				All posts
-			</h3>
+			</h2>
 
 			<div>
 				{#each data.posts as post}

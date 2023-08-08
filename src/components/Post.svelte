@@ -13,7 +13,7 @@
 		my: 3
 	})}
 >
-	<h4
+	<h3
 		class={css({
 			fontWeight: 'medium',
 			fontSize: 'lg',
@@ -23,7 +23,7 @@
 		<a href="/{post.slug}">
 			{post.title}
 		</a>
-	</h4>
+	</h3>
 	<p
 		class={hstack({
 			fontSize: 'sm',

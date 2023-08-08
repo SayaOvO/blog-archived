@@ -66,8 +66,13 @@
 		})}
 	>
 		&copy;saya {new Date().getFullYear()}
-		<a href="rss.xml" target="_blank">
+		<a href="rss.xml"
+		   target="_blank"
+		   class={hstack({
+				 gap: '2px'
+				 })}>
 			<Rss size={16} />
+			RSS
 		</a>
 	</p>
 </footer>

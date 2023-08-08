@@ -33,7 +33,7 @@
 		{
 			name: 'Twitter',
 			icon: Twitter,
-			href: "www.twitter.com/#"
+			href: "www.twitter.com/sayyaOvO"
 		}
 	];
 </script>

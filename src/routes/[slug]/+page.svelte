@@ -9,7 +9,6 @@
 
 	let tags = data.meta.tags ?? [];
 	let categories = data.meta.categories ?? [];
-
 </script>
 
 <svelte:head>
@@ -27,83 +26,82 @@
 		p: '16px 24px'
 	})}
 >
-	<article>
-		<hgroup
+	<hgroup
+		class={css({
+			my: 4,
+			maxW: '70ch'
+		})}
+	>
+		<h1
 			class={css({
-				my: 4,
-				maxW: "70ch"
+				fontWeight: 550,
+				fontSize: '4xl',
+				lineHeight: 1
 			})}
 		>
-			<h1
-				class={css({
-					fontWeight: 550,
-					fontSize: '4xl',
-					lineHeight: 1
+			{data.meta.title}
+		</h1>
+		<i
+			class={css({
+				fontStyle: 'italic',
+				margin: 0
+			})}>{formatDate(data.meta.date)}</i
+		>
+
+		{#if categories.length > 0}
+			<p
+				class={hstack({
+					pl: 3,
+					borderLeft: '2px solid token(colors.orange.800)',
+					my: 2
 				})}
 			>
-				{data.meta.title}
-			</h1>
-				<i
-					class={css({
-						fontStyle: 'italic',
-						margin: 0
-					})}>{formatDate(data.meta.date)}</i>
+				<FolderClosed size={20} />
+				<span>分类：</span>
+				{#each categories as category}
+					<span
+						class={css({
+							bg: 'slate.200',
+							px: 2,
+							py: 1,
+							rounded: 'md',
+							_hover: {
+								cursor: 'pointer',
+								bg: 'slate.300'
+							}
+						})}>{category}</span
+					>
+				{/each}
+			</p>
+		{/if}
 
-			{#if categories.length > 0}
-				<div
-					class={hstack({
-						pl: 3,
-						borderLeft: '2px solid token(colors.orange.800)',
-						my: 2
-					})}
-				>
-					<FolderClosed size={20} />
-					<span>分类：</span>
-					{#each categories as category}
-						<span
-							class={css({
-								bg: 'slate.200',
-								px: 2,
-								py: 1,
-								rounded: 'md',
-								_hover: {
-									cursor: 'pointer',
-									bg: 'slate.300'
-								}
-							})}>{category}</span
-						>
-					{/each}
-				</div>
-			{/if}
-
-			{#if tags.length > 0}
-				<div
-					class={hstack({
-						borderLeft: '2px solid token(colors.orange.800)',
-						pl: 3
-					})}
-				>
-					<Tag size={20} />
-					<span>标签：</span>
-					{#each tags as tag}
-						<span
-							class={css({
-								bg: 'slate.200',
-								px: 2,
-								py: 1,
-								rounded: 'md',
-								_hover: {
-									cursor: 'pointer',
-									bg: 'slate.300'
-								}
-							})}>{tag}</span
-						>
-					{/each}
-				</div>
-			{/if}
-		</hgroup>
-		<section class="prose">
-			<svelte:component this={data.content} />
-		</section>
+		{#if tags.length > 0}
+			<p
+				class={hstack({
+					borderLeft: '2px solid token(colors.orange.800)',
+					pl: 3
+				})}
+			>
+				<Tag size={20} />
+				<span>标签：</span>
+				{#each tags as tag}
+					<span
+						class={css({
+							bg: 'slate.200',
+							px: 2,
+							py: 1,
+							rounded: 'md',
+							_hover: {
+								cursor: 'pointer',
+								bg: 'slate.300'
+							}
+						})}>{tag}</span
+					>
+				{/each}
+			</p>
+		{/if}
+	</hgroup>
+	<article class="prose">
+		<svelte:component this={data.content} />
 	</article>
 </main>

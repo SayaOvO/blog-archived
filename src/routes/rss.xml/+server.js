@@ -1,12 +1,11 @@
-import { getPosts } from "$lib/utils";
+import { getPosts } from '$lib/utils';
 
 export const prerender = true;
 
 /**  @type {import("@sveltejs/kit").Handle} */
 export async function GET() {
-
 	/**  @type {import("$lib/types").Post[]} */
-	const posts = await getPosts() || [];
+	const posts = (await getPosts()) || [];
 
 	const headers = { 'Content-Type': 'application/xml' };
 

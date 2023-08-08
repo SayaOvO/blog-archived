@@ -15,9 +15,12 @@
 <svelte:head>
 	<title>Saya's blog</title>
 	<meta name="description" content="Saya 的个人博客" />
-	<link rel="alternate" type="application/rss+xml"
-		title="RSS Feed for Saya's blog" href="/rss.xml" />
-
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title="RSS Feed for Saya's blog"
+		href="/rss.xml"
+	/>
 </svelte:head>
 
 <div

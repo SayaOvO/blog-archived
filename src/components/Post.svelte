@@ -8,7 +8,7 @@
 	export let post;
 </script>
 
-<div
+<section
 	class={css({
 		my: 3
 	})}
@@ -41,9 +41,11 @@
 			})}>{formatDate(post.date)}</time
 		>
 	</p>
-	<p class={css({
-		maxW: "70ch"
-	})}>
+	<p
+		class={css({
+			maxW: '70ch'
+		})}
+	>
 		{post.description}
 	</p>
-</div>
+</section>

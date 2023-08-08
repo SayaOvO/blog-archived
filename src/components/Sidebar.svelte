@@ -36,7 +36,6 @@
 	];
 </script>
 
-
 <aside
 	class={css({
 		p: 4,
@@ -47,7 +46,7 @@
 		alignSelf: 'baseline'
 	})}
 >
-	<div
+	<section
 		class={css({
 			border: '1px solid token(colors.slate.200)',
 			p: 4,
@@ -62,7 +61,7 @@
 			})}
 		>
 			<img src={avatar} alt="avatar" class="image" />
-			<div
+			<p
 				class={css({
 					ml: 3,
 					w: 'min-content',
@@ -70,7 +69,7 @@
 				})}
 			>
 				来到你身边的博客
-			</div>
+			</p>
 		</div>
 
 		<div
@@ -100,19 +99,19 @@
 							w: '18px'
 						})}
 					/>
-					<p
+					<span
 						class={css({
 							fontSize: 'sm'
 						})}
 					>
 						{name}
-					</p>
+					</span>
 				</a>
 			{/each}
 		</div>
-	</div>
+	</section>
 
-	<div
+	<section
 		class={css({
 			border: '1px solid token(colors.slate.200)',
 			p: 4,
@@ -121,86 +120,81 @@
 			shadow: 'sm'
 		})}
 	>
-		<div>
-			<p
-				class={css({
-					textAlign: 'center',
-					fontWeight: 'semibold'
-				})}
-			>
-				标签
-			</p>
-
-			<div
-				class={hstack({
-					gap: 1,
-					flexWrap: 'wrap',
-					maxW: '180px',
-					mt: 4
-				})}
-			>
-				{#each tags as tag}
-					<p
-						class={css({
-							p: '2px 4px',
-							bg: 'slate.200',
-							rounded: 'md',
-							fontSize: '13px',
-							_hover: {
-								cursor: 'pointer',
-								bg: 'slate.300'
-							}
-						})}
-						style="color: {getRandomColor()}"
-					>
-						{tag}
-					</p>
-				{/each}
-			</div>
-		</div>
-
-		<div
+		<h3
 			class={css({
+				textAlign: 'center',
+				fontWeight: 'semibold'
+			})}
+		>
+			标签
+		</h3>
+
+		<p
+			class={hstack({
+				gap: 1,
+				flexWrap: 'wrap',
+				maxW: '180px',
 				mt: 4
 			})}
 		>
-			<p
-				class={css({
-					textAlign: 'center',
-					fontWeight: 'semibold'
-				})}
-			>
-				分类
-			</p>
+			{#each tags as tag}
+				<a
+					href="/"
+					class={css({
+						p: '2px 4px',
+						bg: 'slate.200',
+						rounded: 'md',
+						fontSize: '13px',
+						_hover: {
+							cursor: 'pointer',
+							bg: 'slate.300'
+						}
+					})}
+					style="color: {getRandomColor()}"
+				>
+					{tag}
+				</a>
+			{/each}
+		</p>
 
-			<div
-				class={hstack({
-					gap: 1,
-					flexWrap: 'wrap',
-					maxW: '180px',
-					mt: 4
-				})}
-			>
-				{#each categories as category}
-					<p
-						class={css({
-							p: '2px 4px',
-							bg: 'slate.200',
-							rounded: 'md',
-							fontSize: '13px',
-							_hover: {
-								cursor: 'pointer',
-								bg: 'slate.300'
-							}
-						})}
-						style="color: {getRandomColor()}"
-					>
-						{category}
-					</p>
-				{/each}
-			</div>
-		</div>
-	</div>
+		<h3
+			class={css({
+				textAlign: 'center',
+				fontWeight: 'semibold',
+				mt: 4
+			})}
+		>
+			分类
+		</h3>
+
+		<p
+			class={hstack({
+				gap: 1,
+				flexWrap: 'wrap',
+				maxW: '180px',
+				mt: 4
+			})}
+		>
+			{#each categories as category}
+				<a
+					href="/"
+					class={css({
+						p: '2px 4px',
+						bg: 'slate.200',
+						rounded: 'md',
+						fontSize: '13px',
+						_hover: {
+							cursor: 'pointer',
+							bg: 'slate.300'
+						}
+					})}
+					style="color: {getRandomColor()}"
+				>
+					{category}
+				</a>
+			{/each}
+		</p>
+	</section>
 </aside>
 
 <style>

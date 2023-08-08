@@ -6,15 +6,14 @@
 
 	/** @type {{pathname:string}}*/
 	export let data;
-
 </script>
 
-	<Navbar />
+<Navbar />
 
-	{#key data.pathname}
-		<div in:fade>
-			<slot />
-		</div>
-	{/key}
+{#key data.pathname}
+	<div in:fade>
+		<slot />
+	</div>
+{/key}
 
-	<Footer />
+<Footer />

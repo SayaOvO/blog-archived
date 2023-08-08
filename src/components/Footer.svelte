@@ -55,11 +55,11 @@
 				gap: '2px'
 			})}
 		>
-			<Github size={16} /><span>Github</span>
+			<Github size={16} />Github
 		</a>
 	</p>
 
-	<div
+	<p
 		class={hstack({
 			gap: 2,
 			justify: 'center'
@@ -69,5 +69,5 @@
 		<a href="rss.xml" target="_blank">
 			<Rss size={16} />
 		</a>
-	</div>
+	</p>
 </footer>

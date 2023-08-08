@@ -30,7 +30,8 @@
 	<article>
 		<hgroup
 			class={css({
-				my: 4
+				my: 4,
+				maxW: "70ch"
 			})}
 		>
 			<h1
@@ -42,14 +43,11 @@
 			>
 				{data.meta.title}
 			</h1>
-			<p>
-				<time
+				<i
 					class={css({
 						fontStyle: 'italic',
 						margin: 0
-					})}>{formatDate(data.meta.date)}</time
-				>
-			</p>
+					})}>{formatDate(data.meta.date)}</i>
 
 			{#if categories.length > 0}
 				<div

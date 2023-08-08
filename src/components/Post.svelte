@@ -41,7 +41,9 @@
 			})}>{formatDate(post.date)}</time
 		>
 	</p>
-	<p>
+	<p class={css({
+		maxW: "70ch"
+	})}>
 		{post.description}
 	</p>
 </div>

@@ -14,8 +14,10 @@
 
 <svelte:head>
 	<title>Saya's blog</title>
-	<!-- <meta name="og:url" content="saya.missgao.cc" /> -->
 	<meta name="description" content="Saya 的个人博客" />
+	<link rel="alternate" type="application/rss+xml"
+		title="RSS Feed for Saya's blog" href="/rss.xml" />
+
 </svelte:head>
 
 <div
@@ -39,7 +41,7 @@
 			}
 		})}
 	>
-		<div>
+		<section>
 			<h1
 				class={css({
 					fontSize: '3xl',
@@ -49,7 +51,7 @@
 			>
 				Saya's Blog
 			</h1>
-			<div
+			<article
 				class={css({
 					mt: 4
 				})}
@@ -59,9 +61,9 @@
 				<p>在这个博客，我会分享我的感想，学到的技术以及发现的一些好玩的东西</p>
 
 				<p>你可以通过 Telegram 或者邮件联系我</p>
-			</div>
-		</div>
-		<div
+			</article>
+		</section>
+		<section
 			class={css({
 				mt: 4
 			})}
@@ -81,6 +83,6 @@
 					<Post {post} />
 				{/each}
 			</div>
-		</div>
+		</section>
 	</main>
 </div>

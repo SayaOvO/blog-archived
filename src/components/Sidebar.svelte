@@ -36,17 +36,6 @@
 	];
 </script>
 
-<!-- <div class={css({
-				p: 4,
-				pos: "sticky",
-				top: 20,
-				h: "80px",
-				alignSelf: "start",
-				bg: "red"
-				})}>
-	 sidebar
-
-	 </div> -->
 
 <aside
 	class={css({
@@ -99,7 +88,7 @@
 						p: 1,
 						rounded: 'md',
 						_hover: {
-							bg: 'slate.50',
+							bg: 'slate.100',
 							cursor: 'pointer'
 						}
 					})}

@@ -9,7 +9,6 @@
 
 </script>
 
-<div>
 	<Navbar />
 
 	{#key data.pathname}
@@ -17,15 +16,5 @@
 			<slot />
 		</div>
 	{/key}
-	<Footer />
-</div>
 
-<style>
-	div {
-		font-family: tilda;
-	}
-	@font-face {
-		font-family: tilda;
-		src: url('$lib/assets/TildaSans-Medium.woff') format('woff');
-	}
-</style>
+	<Footer />

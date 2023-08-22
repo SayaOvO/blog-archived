@@ -67,7 +67,6 @@ export async function getPosts(tag, category) {
 	for (const path in paths) {
 		const file = paths[path];
 		const slug = path.split('/').at(-1)?.replace('.md', '');
-
 		if (file && typeof file === 'object' && 'metadata' in file && slug) {
 			/** @type {import("$lib/types").Metadata} */
 			// @ts-ignore
@@ -89,6 +88,6 @@ export async function getPosts(tag, category) {
 
 		// sort posts by date
 		posts.sort((p1, p2) => new Date(p2.date).getTime() - new Date(p1.date).getTime());
-		return posts;
 	}
+		return posts;
 }

@@ -55,7 +55,7 @@
 		transition: 'box-shadow 0.3s',
 		zIndex: 50
 	})}
-	style={isScrolled ? 'box-shadow: 0 8px 10px -4px rgb(0 0 0 /0.1)' : ''}
+	style:box-shadow={isScrolled ? '0 8px 10px -4px rgb(0 0 0 /0.1)' : ''}
 >
 	<a
 		href="/"

@@ -69,5 +69,4 @@ tags:
 > If none of the three are 'auto': If both 'margin-top' and 'margin-bottom' are 'auto', solve the equation under the extra constraint that the two margins get equal values
 > 
 
-第 10.3.7 节也有基本一样的说明，两个方向结合起来就可以得出处于绝对定位的元素会被水平、垂直居中于其 `Containing block`，而上面的例子中，通过 `inset：0` 让该 `containing block` 占据整个 `.outer` 元素的空间
-
+第 10.3.7 节也有基本一样的说明，两个方向结合起来就可以得出处于绝对定位的元素会被水平、垂直居中于其 `Containing block`
